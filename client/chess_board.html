@@ -1,0 +1,16 @@
+<template name="chess_board">
+  <table class="chess_board">
+    {{#each positions}}
+      <tr>
+        <th>1</th>
+        {{#each this}}<td>{{> position}}</td>{{/each}}
+      </tr>
+    {{/each}}
+  </table>
+</template>
+
+<template name="position">
+  <div>{{#with piece}}{{letter}}{{/with}}</div>
+</template>
+
+  

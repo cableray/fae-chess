@@ -1,0 +1,102 @@
+<head>
+  <title>Fae Chess</title>
+</head>
+
+<body>
+  <header>
+    <h1 class="site_title">Fae Chess</h1>
+    {{> nav}}
+    {{> user_panel}}
+  </header>
+  
+  {{> main_view}}
+</body>
+
+<template name="nav">
+  <nav>
+    <button id="go_lobby" {{#if view_is "lobby"}}disabled="true" class="current_view"{{/if}}>Lobby</button>
+    <button id="go_pieces" {{#if view_is "pieces"}}disabled="true" class="current_view"{{/if}}>Pieces</button>
+  </nav>
+</template>
+
+<template name="main_view">
+  {{{view}}}
+</template>
+
+<template name="lobby">
+  <section id="lobby">
+    {{> games}}
+  </section>
+</template>
+
+<template name="games">
+  <section id="lobby_games">
+    <table>
+      <thead>
+        <tr>
+        <th>Players</th>
+        <th>Variant</th>
+        <th>Description</th>
+        <th>Open</th>
+        </tr>
+      </thead>
+      <tbody>
+      {{#each games}}
+        {{> game_row}}
+      {{/each}}
+      </tbody>
+    </table>
+  </section>
+</template>
+
+<template name="game_row">
+  <tr>
+    <td>{{print_list players ", "}}</td>
+    <td>{{variant}}</td>
+    <td>{{description}}</td>
+    <td>{{open_status}}</td>
+  </tr>
+</template>
+
+<template name="game_view">
+  <section id="game">
+    <button id="to_lobby">back to lobby</button>
+    <header>
+      {{#each status}}
+        {{> stats}}
+      {{/each}}
+    </header>
+    <section id="board">
+      {{> chess_board}}
+    </section>
+    <section id="turn_list">
+      {{> turn_list}}
+    </section>
+  </section>
+</template>
+
+<template name="stats">
+  <h1>Game Between {{print_list players " and "}}</h1>
+  <h2>{{description}}</h2>
+  <h2>{{variant}}</h2>
+</template>
+
+<template name="turn_list">
+  <ul>
+    {{#each turns}}
+      {{> turn_list_item}}
+    {{/each}}
+    </ul>
+</template>
+
+<template name="turn_list_item">
+  <li>#[{{number}}] ID:{{_id}}</li>
+</template>
+
+<template name="hello">
+  <div class="hello">
+    <h1>Hello World!</h1>
+    {{greeting}}
+    <input type="button" value="Click" />
+  </div>
+</template>

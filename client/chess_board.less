@@ -1,0 +1,27 @@
+table.chess_board {
+  border:solid 1px gray;
+  border-spacing:0;
+  width:auto;
+  td {
+    width:1.5em;
+    height:1.5em;
+    
+    div {
+      text-align:center;
+      vertical-align:middle;
+      width:1.5em;
+      height:1.5em;
+    }
+  }
+  
+  tr:nth-child(odd){
+    td:nth-child(odd){
+      background-color:#AAA;
+    }
+  }
+  tr:nth-child(even){
+    td:nth-child(even){
+      background-color:#AAA;
+    }
+  }
+}

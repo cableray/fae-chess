@@ -1,0 +1,20 @@
+<template name="user_panel">
+  <section id="user_panel">
+    {{#if user}}
+      {{#with user}}
+        Username: {{username}}
+        <button id="logout">logout</button>
+      {{/with}}
+    {{else}}
+      {{> login_form}}
+    {{/if}}
+  </section>
+</template>
+
+<template name="login_form">
+  <form method="post">
+    <input type="text" name="username" id="username" placeholder="user name" />
+    <input type="text" name="password" id="password" placeholder="password" />
+    <input type="submit" />
+  </form>
+</template>
