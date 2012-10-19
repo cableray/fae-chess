@@ -3,13 +3,15 @@
 </head>
 
 <body>
-  <header>
-    <h1 class="site_title">Fae Chess</h1>
-    {{> nav}}
-    {{> user_panel}}
-  </header>
-  
-  {{> main_view}}
+  <div class="container-fluid">
+    <header class="row-fluid">
+      <h1 class="site_title">Fae Chess</h1>
+      {{> nav}}
+      {{> user_panel}}
+    </header>
+
+    {{> main_view}}
+  </div>
 </body>
 
 <template name="nav">
@@ -20,7 +22,7 @@
 </template>
 
 <template name="main_view">
-  {{{view}}}
+  <div class="row-fluid">{{{view}}}</div>
 </template>
 
 <template name="lobby">
