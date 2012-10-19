@@ -10,5 +10,5 @@ sass
 jquery
 bootstrap
 accounts-ui
-accounts-base
+accounts-password
 d3
